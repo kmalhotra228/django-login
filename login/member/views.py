@@ -56,7 +56,7 @@ def signupUser(request):
         message = "Hello " + myuser.first_name +"!!\n"+ "Welcome here!! \n Thankyou for visting us \n We have also sent you the confirmation email, Please confirm your email address \n\n Thankyou"
         from_email = settings.EMAIL_HOST_USER
         to_list = [myuser.email]
-        send_mail(subject,message,from_email,to_list, fail_silently = True)
+        send_mail(subject,message,from_email,to_list, fail_silently = False)
 
 
         return redirect(reverse('member:login'))
